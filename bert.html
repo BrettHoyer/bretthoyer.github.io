@@ -1,0 +1,43 @@
+<!-- @format -->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.js"
+      integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+    <style>
+      .circle div {
+        color: pink;
+      }
+
+      .circle div:first-child {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      BERT is fat obese disgusting sloppy frumpy gross slovenly portly piggish
+      fat obese disgusting sloppy frumpy gross slovenly portly piggish
+    </div>
+    <img src="bertpig.png" alt="" id="bertpig" />
+    <img src="overweightscale.png" alt="" width="400" />
+    <script>
+      const clientWidth = document.body.clientWidth;
+      $("#bertpig").css({
+        width: "250px",
+        position: "absolute",
+        top: "100px",
+        left: `calc(${clientWidth / 2 - 125}px)`,
+      });
+      console.log(clientWidth / 2);
+      new CircleType(document.getElementsByClassName("circle")[0]).radius(
+        clientWidth / 2 - 20
+      );
+    </script>
+  </body>
+</html>
